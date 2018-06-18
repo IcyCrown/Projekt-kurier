@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{24CBB451-A79F-4C76-82C8-C2E0B95FA6E4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Projekt_kurier</RootNamespace>
+    <AssemblyName>Projekt kurier</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AddCourierWindow.xaml.cs">
+      <DependentUpon>AddCourierWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddNormalUserWindow.xaml.cs">
+      <DependentUpon>AddNormalUserWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.cs" />
+    <Compile Include="AdminNormalUsersWindow.xaml.cs">
+      <DependentUpon>AdminNormalUsersWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AssignParcelWindow.xaml.cs">
+      <DependentUpon>AssignParcelWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CheckStatusWindow.xaml.cs">
+      <DependentUpon>CheckStatusWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Courier.cs" />
+    <Compile Include="CourierLoginDataWindow.xaml.cs">
+      <DependentUpon>CourierLoginDataWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CourierRankListWindow.xaml.cs">
+      <DependentUpon>CourierRankListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DB.cs" />
+    <Compile Include="DescriptionWindow.xaml.cs">
+      <DependentUpon>DescriptionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeStatusWindow.xaml.cs">
+      <DependentUpon>ChangeStatusWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditCourierDataWindow.xaml.cs">
+      <DependentUpon>EditCourierDataWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditNormalUserDataWindow.xaml.cs">
+      <DependentUpon>EditNormalUserDataWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditParcelDataWindow.xaml.cs">
+      <DependentUpon>EditParcelDataWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NormalUserLoginWindow.xaml.cs">
+      <DependentUpon>NormalUserLoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Package.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="NormalUserParcelListWindow.xaml.cs">
+      <DependentUpon>NormalUserParcelListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NormalUserPersonalDataWindow.xaml.cs">
+      <DependentUpon>NormalUserPersonalDataWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NormalUserWindow.xaml.cs">
+      <DependentUpon>NormalUserWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminWindow.xaml.cs">
+      <DependentUpon>AdminWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CourierWindow.xaml.cs">
+      <DependentUpon>CourierWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminParcelWindow.xaml.cs">
+      <DependentUpon>AdminParcelWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCouriersWindow.xaml.cs">
+      <DependentUpon>AdminCouriersWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CourierLoginWindow.xaml.cs">
+      <DependentUpon>CourierLoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminLoginWindow.xaml.cs">
+      <DependentUpon>AdminLoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AddCourierWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddNormalUserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddParcelWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminNormalUsersWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AssignParcelWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ButtonStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CheckStatusWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ColorBrushes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CourierLoginDataWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CourierRankListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DescriptionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CourierParcelWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="AddParcelWindow.xaml.cs">
+      <DependentUpon>AddParcelWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CourierParcelWindow.xaml.cs">
+      <DependentUpon>CourierParcelWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="ChangeStatusWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditCourierDataWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditNormalUserDataWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditParcelDataWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NormalUserLoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NormalUserParcelListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NormalUserPersonalDataWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NormalUserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CourierWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminParcelWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminCouriersWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CourierLoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminLoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AdminPanel\ManageNormalUsersBurned.png" />
+    <Resource Include="Resources\AdminPanel\ManageNormalUsersGloss.png" />
+    <Resource Include="Resources\AdminPanel\ManageNormalUsersNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AdminPanel\ManageCouriersBurned.png" />
+    <Resource Include="Resources\AdminPanel\ManageCouriersGloss.png" />
+    <Resource Include="Resources\AdminPanel\ManageCouriersNormal.png" />
+    <Resource Include="Resources\AdminPanel\ManageParcelsBurned.png" />
+    <Resource Include="Resources\AdminPanel\ManageParcelsGloss.png" />
+    <Resource Include="Resources\AdminPanel\ManageParcelsNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CourierPanel\ChangeCourierLoginBurned.png" />
+    <Resource Include="Resources\CourierPanel\ChangeCourierLoginGloss.png" />
+    <Resource Include="Resources\CourierPanel\ChangeCourierLoginNormal.png" />
+    <Resource Include="Resources\CourierPanel\CouriersRankingBurned.png" />
+    <Resource Include="Resources\CourierPanel\CouriersRankingGloss.png" />
+    <Resource Include="Resources\CourierPanel\CouriersRankingNormal.png" />
+    <Resource Include="Resources\CourierPanel\ParcelsListBurned.png" />
+    <Resource Include="Resources\CourierPanel\ParcelsListGloss.png" />
+    <Resource Include="Resources\CourierPanel\ParcelsListNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MainPanel\AdminLoginBurned.png" />
+    <Resource Include="Resources\MainPanel\AdminLoginGloss.png" />
+    <Resource Include="Resources\MainPanel\AdminLoginNormal.png" />
+    <Resource Include="Resources\MainPanel\CourierLoginBurned.png" />
+    <Resource Include="Resources\MainPanel\CourierLoginGloss.png" />
+    <Resource Include="Resources\MainPanel\CourierLoginNormal.png" />
+    <Resource Include="Resources\MainPanel\ExitBurned.png" />
+    <Resource Include="Resources\MainPanel\ExitGloss.png" />
+    <Resource Include="Resources\MainPanel\ExitNormal.png" />
+    <Resource Include="Resources\MainPanel\NormalLoginBurned.png" />
+    <Resource Include="Resources\MainPanel\NormalLoginGloss.png" />
+    <Resource Include="Resources\MainPanel\NormalLoginNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NormalUserPanel\CheckStatusBurned.png" />
+    <Resource Include="Resources\NormalUserPanel\CheckStatusGloss.png" />
+    <Resource Include="Resources\NormalUserPanel\CheckStatusNormal.png" />
+    <Resource Include="Resources\NormalUserPanel\PersonalDataBurned.png" />
+    <Resource Include="Resources\NormalUserPanel\PersonalDataGloss.png" />
+    <Resource Include="Resources\NormalUserPanel\PersonalDataNormal.png" />
+    <Resource Include="Resources\NormalUserPanel\SendBurned.png" />
+    <Resource Include="Resources\NormalUserPanel\SendGloss.png" />
+    <Resource Include="Resources\NormalUserPanel\SendNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Common\LogoutBurned.png" />
+    <Resource Include="Resources\Common\LogoutGloss.png" />
+    <Resource Include="Resources\Common\LogoutNormal.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

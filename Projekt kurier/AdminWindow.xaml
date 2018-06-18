@@ -1,0 +1,20 @@
+﻿<Window x:Class="Projekt_kurier.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AdminWindow" Height="621.5" Width="600" MinHeight="321.5" MinWidth="300" MaxHeight="621.5" MaxWidth="600"
+        WindowStartupLocation="CenterScreen" SizeChanged="SqareResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Click="ManageParcels" Style="{StaticResource AdminWindowManageParcels}" ToolTip="Zarządzaj przesyłkami"/>
+        <Button Grid.Column="1" Click="ManageCouriers" Style="{StaticResource AdminWindowManageCouriers}" ToolTip="Zarządzaj Kurierami"/>
+        <Button Grid.Row="1" Click="ChangeLoginData" Style="{StaticResource AdminWindowManageNormalUsers}" ToolTip="Zarządzaj Zwykłymi Użytkownikami"/>
+        <Button Grid.Row="1" Grid.Column="1" Click="Logout" Style="{StaticResource Logout}" ToolTip="Wyloguj"/>
+    </Grid>
+</Window>

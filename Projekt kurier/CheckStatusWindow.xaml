@@ -1,0 +1,27 @@
+﻿<Window x:Class="Projekt_kurier.CheckStatusWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CheckStatusWindow" Height="110" Width="300" MinHeight="110" MinWidth="300" MaxHeight="110" MaxWidth="450">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Margin="2.5">ID przesyłki do sprawdzenia:</Label>
+            <TextBox Grid.Column="1" Margin="2.5"></TextBox>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Row="1" Margin="2.5">Sprawdź</Button>
+            <Button Grid.Row="1" Grid.Column="1" Margin="2.5">Wyjdź</Button>
+        </Grid>
+    </Grid>
+</Window>
