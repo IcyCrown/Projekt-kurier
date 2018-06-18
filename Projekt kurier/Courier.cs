@@ -8,7 +8,6 @@ namespace Projekt_kurier
 {
     public class Courier
     {
-        //testtesttest
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Login { get; set; }
