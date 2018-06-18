@@ -23,7 +23,7 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Label>Imię Nadawcy:</Label>
+            <Label Margin="2.5">Imię Nadawcy:</Label>
             <Label Grid.Row="1" Margin="2.5">Nazwisko Nadawcy:</Label>
             <Label Grid.Row="2" Margin="2.5">Adres Nadawcy:</Label>
             <Label Grid.Row="3" Margin="2.5">Imię Odbiorcy:</Label>
