@@ -23,5 +23,15 @@ namespace Projekt_kurier
         {
             InitializeComponent();
         }
+
+        private void Close(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void Save(object sender, RoutedEventArgs e)
+        {
+            if()
+        }
     }
 }
