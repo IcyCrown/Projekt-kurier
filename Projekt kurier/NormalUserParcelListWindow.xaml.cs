@@ -11,6 +11,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Collections;
+using System.Globalization;
+using System.Windows.Navigation;
+using System.ComponentModel;
+
 
 namespace Projekt_kurier
 {
@@ -57,6 +62,45 @@ namespace Projekt_kurier
             epdw.Owner = this;
             epdw.DataContext = this;
             epdw.ShowDialog();
+        }
+
+        public ListCollectionView View
+        {
+            get
+            {
+                return (ListCollectionView)CollectionViewSource.GetDefaultView(DB.PackagesList);
+            }
+        }
+        private void ParcelStatusSort_Selected(object sender, RoutedEventArgs e)
+        {
+            View.SortDescriptions.Clear();
+            View.SortDescriptions.Add(new SortDescription("State", ListSortDirection.Descending));
+            userListBox.Items.Refresh();
+        }
+        private void SortCancel_Selected(object sender, RoutedEventArgs e)
+        {
+            View.SortDescriptions.Clear();
+        }
+        private void IDSearch_Clicked(object sender, RoutedEventArgs e)
+        {
+            decimal id;
+            if (Decimal.TryParse(IDSearch.Text, out id))
+            {
+                View.Filter = delegate (object item)
+                {
+                    Package package = item as Package;
+                    if (package != null)
+                    {
+                        return (userListBox.Items.IndexOf(package) == id);
+                    }
+                    return false;
+                };
+            }
+            userListBox.Items.Refresh();
+        }
+        private void ParcelIDSort_Selected(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
