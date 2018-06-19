@@ -40,6 +40,15 @@ namespace Projekt_kurier
             catch (NullReferenceException) { }
         }
 
+        private void Remove_Click(object sender, RoutedEventArgs e)
+        {
+            DB.PackagesList.RemoveAt(userListBox.SelectedIndex);
+            userListBox.Items.Refresh();
+        }
 
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
