@@ -13,10 +13,10 @@ namespace Projekt_kurier
     /// </summary>
     public class DB
     {
-        public static List<User> UsersList = new List<User>();
-        public static List<Courier> CouriersList = new List<Courier>();
+        public static ObservableCollection<User> UsersList = new ObservableCollection<User>();
+        public static ObservableCollection<Courier> CouriersList = new ObservableCollection<Courier>();
         public static Admin Administrator = new Admin("admin", "password");
-        public static List<Package> PackagesList = new List<Package>();
+        public static ObservableCollection<Package> PackagesList = new ObservableCollection<Package>();
 
         public DB() { }
 
@@ -39,7 +39,7 @@ namespace Projekt_kurier
         {
             return UsersList[id];
         }
-        public List<User> Users
+        public ObservableCollection<User> Users
         {
             get
             {
@@ -55,7 +55,7 @@ namespace Projekt_kurier
         {
             return CouriersList[id];
         }
-        public List<Courier> Couriers
+        public ObservableCollection<Courier> Couriers
         {
             get
             {
@@ -71,7 +71,7 @@ namespace Projekt_kurier
         {
             return PackagesList[id];
         }
-        public List<Package> Packages
+        public ObservableCollection<Package> Packages
         {
             get
             {

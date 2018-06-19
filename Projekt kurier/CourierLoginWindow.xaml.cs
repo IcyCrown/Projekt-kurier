@@ -28,7 +28,12 @@ namespace Projekt_kurier
         {
             CourierWindow win = new CourierWindow();
             win.Owner = this;
-            Courier co = DB.CouriersList.Find(u => u.Login == IDTextBox.Text && u.Password == PasswordTextBox.Text);
+            Courier co = null;
+            try
+            {
+                co = DB.CouriersList.Where(u => u.Login == IDTextBox.Text && u.Password == PasswordTextBox.Text).Single();
+            }
+            catch (Exception) { }
             if (co == null)
             {
                 MessageBox.Show("Podane dane są nieprawidłowe!");

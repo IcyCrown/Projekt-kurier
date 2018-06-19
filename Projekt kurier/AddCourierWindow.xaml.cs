@@ -30,7 +30,12 @@ namespace Projekt_kurier
                 MessageBox.Show("Uzupełnij puste pola!");
                 return;
             }
-            User us = DB.UsersList.Find(u => u.Login == LoginTextBox.Text);
+            User us = null;
+            try
+            {
+                us = DB.UsersList.Where(u => u.Login == LoginTextBox.Text).Single();
+            }
+            catch (Exception) { }
             if (us != null)
             {
                 MessageBox.Show("Podany login jest zajety!");
