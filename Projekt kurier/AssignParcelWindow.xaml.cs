@@ -33,7 +33,6 @@ namespace Projekt_kurier
                 package.AssignedCourier = (from courier in DB.CouriersList
                                            where courier.Login == AssingTextBox.Text
                                            select courier).First();
-                package.State = PackageState.Assigned;
             }
             catch (InvalidOperationException) { MessageBox.Show("Kurier o podanym loginie nie istnieje!"); }
             Close();

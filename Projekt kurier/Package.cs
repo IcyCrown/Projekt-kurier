@@ -7,7 +7,7 @@ using System.ComponentModel;
 
 namespace Projekt_kurier
 {
-    public enum PackageState { Posted, Assigned, Delivered, Cancelled }
+    public enum PackageState { Pending, Delivered, Cancelled }
     public class Package : INotifyPropertyChanged
     {
         public User Sender { get; set; }
@@ -22,7 +22,7 @@ namespace Projekt_kurier
         public Package(User sender, string recipientname, string recipientsurname, string recipientaddress, string description)
         {
             Sender = sender;
-            RecipientName = RecipientName;
+            RecipientName = recipientname;
             RecipientSurname = recipientsurname;
             RecipientAddress = recipientaddress;
             Description = description;
