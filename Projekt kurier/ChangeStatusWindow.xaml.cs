@@ -26,7 +26,11 @@ namespace Projekt_kurier
         void SetPackageDelivered(object sender, RoutedEventArgs e)
         {
             Package package;
-            if (Owner is CourierParcelWindow) { package = (Package)((CourierParcelWindow)Owner).PackagesListBox.SelectedItem; }
+            if (Owner is CourierParcelWindow)
+            {
+                package = (Package)((CourierParcelWindow)Owner).PackagesListBox.SelectedItem;
+                package.AssignedCourier.DeliveredPackagesCount++;
+            }
             else { package = (Package)((AdminParcelWindow)Owner).PackagesListBox.SelectedItem; }
             package.State = PackageState.Delivered;
         }

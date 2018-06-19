@@ -23,5 +23,12 @@ namespace Projekt_kurier
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<Courier> ranking = new List<Courier>(DB.CouriersList);
+            ranking = ranking.OrderByDescending(o => o.DeliveredPackagesCount).ToList();
+            RankListBox.ItemsSource = ranking;
+        }
     }
 }
