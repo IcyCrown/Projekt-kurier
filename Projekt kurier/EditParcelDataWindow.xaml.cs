@@ -23,5 +23,28 @@ namespace Projekt_kurier
         {
             InitializeComponent();
         }
+
+        private void SaveChanges_Click(object sender, RoutedEventArgs e)
+        {
+            BindingExpression binding = senderName.GetBindingExpression(TextBox.TextProperty);
+            binding.UpdateSource();
+            binding = senderSurname.GetBindingExpression(TextBox.TextProperty);
+            binding.UpdateSource();
+            binding = senderAddress.GetBindingExpression(TextBox.TextProperty);
+            binding.UpdateSource();
+            binding = recipientName.GetBindingExpression(TextBox.TextProperty);
+            binding.UpdateSource();
+            binding = recipientSurname.GetBindingExpression(TextBox.TextProperty);
+            binding.UpdateSource();
+            binding = recipientAddress.GetBindingExpression(TextBox.TextProperty);
+            binding.UpdateSource();
+            binding = description.GetBindingExpression(TextBox.TextProperty);
+            binding.UpdateSource();
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

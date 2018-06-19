@@ -31,21 +31,21 @@
             <Label Grid.Row="5" Margin="2.5">Adres Odbiorcy:</Label>
             <Label Grid.Row="6" Margin="2.5">Opis:</Label>
 
-            <TextBox x:Name="senderName" Grid.Column="1" Margin="2.5"></TextBox>
-            <TextBox x:Name="senderSurname" Grid.Row="1" Grid.Column="1" Margin="2.5"></TextBox>
-            <TextBox x:Name="senderAddress" Grid.Row="2" Grid.Column="1" Margin="2.5"></TextBox>
-            <TextBox x:Name="recipientName" Grid.Row="3" Grid.Column="1" Margin="2.5"></TextBox>
-            <TextBox x:Name="recipientSurname" Grid.Row="4" Grid.Column="1" Margin="2.5"></TextBox>
-            <TextBox x:Name="recipientAddress" Grid.Row="5" Grid.Column="1" Margin="2.5"></TextBox>
+            <TextBox x:Name="senderName" Grid.Column="1" Margin="2.5" Text="{Binding Path=Sender.UserName, UpdateSourceTrigger=Explicit, Mode=TwoWay, ValidatesOnExceptions=True}"></TextBox>
+            <TextBox x:Name="senderSurname" Grid.Row="1" Grid.Column="1" Margin="2.5" Text="{Binding Path=Sender.UserSurname, UpdateSourceTrigger=Explicit, Mode=TwoWay, ValidatesOnExceptions=True}"></TextBox>
+            <TextBox x:Name="senderAddress" Grid.Row="2" Grid.Column="1" Margin="2.5" Text="{Binding Path=Sender.UserAddress, UpdateSourceTrigger=Explicit, Mode=TwoWay, ValidatesOnExceptions=True}"></TextBox>
+            <TextBox x:Name="recipientName" Grid.Row="3" Grid.Column="1" Margin="2.5" Text="{Binding Path=RecipientName, UpdateSourceTrigger=Explicit, Mode=TwoWay, ValidatesOnExceptions=True}"></TextBox>
+            <TextBox x:Name="recipientSurname" Grid.Row="4" Grid.Column="1" Margin="2.5" Text="{Binding Path=RecipientSurname, UpdateSourceTrigger=Explicit, Mode=TwoWay, ValidatesOnExceptions=True}"></TextBox>
+            <TextBox x:Name="recipientAddress" Grid.Row="5" Grid.Column="1" Margin="2.5" Text="{Binding Path=RecipientAddress, UpdateSourceTrigger=Explicit, Mode=TwoWay, ValidatesOnExceptions=True}"></TextBox>
         </Grid>
-        <TextBox x:Name="description" Grid.Row="1" AcceptsReturn="True" TextWrapping="Wrap" Margin="2.5" VerticalScrollBarVisibility="Visible"></TextBox>
+        <TextBox x:Name="description" Grid.Row="1" AcceptsReturn="True" TextWrapping="Wrap" Margin="2.5" VerticalScrollBarVisibility="Visible" Text="{Binding Path=Description, UpdateSourceTrigger=Explicit, Mode=TwoWay, ValidatesOnExceptions=True}"></TextBox>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Margin="2.5">Zapisz</Button>
-            <Button Grid.Column="1" Margin="2.5">Wyjdź</Button>
+            <Button Margin="2.5" Click="SaveChanges_Click">Zapisz</Button>
+            <Button Grid.Column="1" Margin="2.5" Click="Exit_Click">Wyjdź</Button>
         </Grid>
     </Grid>
 </Window>
