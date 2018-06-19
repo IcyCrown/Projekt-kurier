@@ -26,11 +26,8 @@ namespace Projekt_kurier
     
     private void Add(object sender, RoutedEventArgs e)
         {
-            // to trzeba będzie dodać jak już będziemy mieli ogarnięte logowanie
-            //User userSender = (User)from user in DB.UsersList
-            //              where user.UserName == senderName.Text && user.UserSurname == senderSurname.Text && user.UserAddress == senderAddress.Text
-            //              select user;
-            DB.PackagesList.Add(new Package(new User(senderName.Text, senderSurname.Text, senderAddress.Text), recipientName.Text, recipientSurname.Text, recipientAddress.Text, description.Text));
+            User userSender = ((NormalUserWindow)Owner).CurrentUser;
+            DB.PackagesList.Add(new Package(userSender, recipientName.Text, recipientSurname.Text, recipientAddress.Text, description.Text));
             DB.PackagesList.Last().State = PackageState.Posted;
             Close();
         }
