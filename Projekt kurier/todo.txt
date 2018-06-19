@@ -1,0 +1,15 @@
+Klient:
+-wszystko w podgl¹dzie przesy³ek, przyda³oby siê jeszcze dodaæ coœ z otwieraniem "podsymowania" przesy³ki jako dokument (przedostatni wyk³ad z wpf), ¿eby da³o siê coœ drukowaæ
+-zmiana swoich danych
+Kurier:
+-grupowanie, szukanie i sortowanie w podgl¹dzie przesy³ek
+-ca³y ten ranking na kiju xD
+-zmiana w³asnych danych logowania
+Admin:
+-edytowanie i usuwanie kurierów
+-te¿ wszystko w podgl¹dzie przesy³ek, tak samo jak w kliencie
+-wiêkszoœæ rzeczy w podgl¹dzie klientów
+-----------------------------------------------------------
+-ogólnie najpierw trzeba zmieniæ wszystkie listy w DB na ObservableCollection
+Opcjonalnie:
+-jakieœ bindingi, jakieœ commandsy
