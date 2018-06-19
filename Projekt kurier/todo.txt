@@ -14,3 +14,6 @@ Admin:
 Opcjonalnie:
 -jakieœ bindingi, jakieœ commandsy to nawet nie opcjonalnie tylko po prostu trzeba u¿yæ kilka razy za to s¹ punkty
 -zrobic drukowanie = 5%
+
+
+-ODPOWIEDNIE RELACJE MIEDZY OKNAMI ZAMYKANIE LOGINU ITP
