@@ -22,7 +22,15 @@ namespace Projekt_kurier
         public AdminCouriersWindow()
         {
             InitializeComponent();
-            CouriersListBox.ItemsSource = DB.CouriersList;
+            CouriersListBox.ItemsSource = DB.Instance.Couriers;
+        }
+
+        private ListCollectionView View
+        {
+            get
+            {
+                return (ListCollectionView)CollectionViewSource.GetDefaultView(DB.Instance.Couriers);
+            }
         }
 
         private void Add(object sender, RoutedEventArgs e)
