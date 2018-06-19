@@ -27,7 +27,7 @@ namespace Projekt_kurier
         {
             NormalUserWindow win = new NormalUserWindow();
             win.Owner = this;
-            User us = DB.UsersList.Find(u => u.Login == IDTextBox.Text || u.Password == PasswordTextBox.Text);
+            User us = DB.UsersList.Find(u => u.Login == IDTextBox.Text && u.Password == PasswordTextBox.Text);
             if (us == null)
             {
                 MessageBox.Show("Podane dane są nieprawidłowe!");

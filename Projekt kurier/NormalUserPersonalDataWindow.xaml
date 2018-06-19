@@ -27,20 +27,20 @@
             <Label Grid.Row="3" Margin="2.5">Nowy Login:</Label>
             <Label Grid.Row="4" Margin="2.5">Nowe Hasło:</Label>
             <Label Grid.Row="5" Margin="2.5">Powtórz Hasło:</Label>
-            <TextBox Grid.Column="1" Margin="2.5"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="1" Margin="2.5"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="1" Margin="2.5"></TextBox>
-            <TextBox Grid.Row="3" Grid.Column="1" Margin="2.5"></TextBox>
-            <TextBox Grid.Row="4" Grid.Column="1" Margin="2.5"></TextBox>
-            <TextBox Grid.Row="5" Grid.Column="1" Margin="2.5"></TextBox>
+            <TextBox Name="NameTextBox" Grid.Column="1" Margin="2.5"></TextBox>
+            <TextBox Name="SurnameTextBox" Grid.Row="1" Grid.Column="1" Margin="2.5"></TextBox>
+            <TextBox Name="AddressTextBox" Grid.Row="2" Grid.Column="1" Margin="2.5"></TextBox>
+            <TextBox Name="NewLoginTextBox" Grid.Row="3" Grid.Column="1" Margin="2.5"></TextBox>
+            <PasswordBox Name="NewPasswordPasswordBox" Grid.Row="4" Grid.Column="1" Margin="2.5"/>
+            <PasswordBox Name="ConfirmPasswordPasswordBox" Grid.Row="5" Grid.Column="1" Margin="2.5"></PasswordBox>
         </Grid>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Margin="2.5">Zapisz</Button>
-            <Button Grid.Column="1" Margin="2.5">Wyjdź</Button>
+            <Button Click="Save" Margin="2.5">Zapisz</Button>
+            <Button Click="Close" Grid.Column="1" Margin="2.5">Wyjdź</Button>
         </Grid>
     </Grid>
 </Window>
