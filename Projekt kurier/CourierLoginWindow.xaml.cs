@@ -27,7 +27,7 @@ namespace Projekt_kurier
         private void Login(object sender, RoutedEventArgs e)
         {
             CourierWindow win = new CourierWindow();
-            win.Owner = this;
+            win.Owner = this.Owner;
             Courier co = null;
             try
             {
@@ -40,6 +40,7 @@ namespace Projekt_kurier
                 return;
             }
             win.CurrentCourier = co;
+            this.Close();
             win.ShowDialog();
         }
 

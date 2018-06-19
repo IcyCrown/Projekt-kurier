@@ -27,12 +27,13 @@ namespace Projekt_kurier
         private void Login(object sender, RoutedEventArgs e)
         {
             AdminWindow win = new AdminWindow();
-            win.Owner = this;
+            win.Owner = this.Owner;
             if (IDTextBox.Text != DB.Administrator.AdminLogin || PasswordTextBox.Text != DB.Administrator.AdminPassword)
             {
                 MessageBox.Show("Podane dane są nieprawidłowe!");
                 return;
             }
+            this.Close();
             win.ShowDialog();
         }
 

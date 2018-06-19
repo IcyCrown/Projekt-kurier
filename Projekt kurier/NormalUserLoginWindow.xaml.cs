@@ -26,7 +26,7 @@ namespace Projekt_kurier
         private void Login(object sender, RoutedEventArgs e)
         {
             NormalUserWindow win = new NormalUserWindow();
-            win.Owner = this;
+            win.Owner = this.Owner;
             User us = null;
             try
             {
@@ -39,6 +39,7 @@ namespace Projekt_kurier
                 return;
             }
             win.CurrentUser = us;
+            this.Close();
             win.ShowDialog();
         }
 
