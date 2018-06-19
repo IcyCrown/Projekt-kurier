@@ -38,8 +38,8 @@ namespace Projekt_kurier
         {
             try
             {
-                userListBox.ItemsSource = from package in DB.PackagesList
-                                              where package.Sender.Login == ((NormalUserWindow)Owner).CurrentUser.Login
+                userListBox.ItemsSource = from package in DB.Instance.Packages
+                where package.Sender.Login == ((NormalUserWindow)Owner).CurrentUser.Login
                                               select package;
             }
             catch (NullReferenceException) { }
