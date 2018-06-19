@@ -99,6 +99,8 @@
       <DependentUpon>NormalUserLoginWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Package.cs" />
+    <Compile Include="ParcelStateBrushConverter.cs" />
+    <Compile Include="ParcelStateNameConverter.cs" />
     <Compile Include="User.cs" />
     <Compile Include="NormalUserParcelListWindow.xaml.cs">
       <DependentUpon>NormalUserParcelListWindow.xaml</DependentUpon>

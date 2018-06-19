@@ -31,7 +31,7 @@ namespace Projekt_kurier
             //              where user.UserName == senderName.Text && user.UserSurname == senderSurname.Text && user.UserAddress == senderAddress.Text
             //              select user;
             DB.PackagesList.Add(new Package(new User(senderName.Text, senderSurname.Text, senderAddress.Text), recipientName.Text, recipientSurname.Text, recipientAddress.Text, description.Text));
-            DB.PackagesList.Last().State = PackageState.Posted;
+            DB.PackagesList.Last().State = PackageState.Pending;
             Close();
         }
 

@@ -35,7 +35,6 @@ namespace Projekt_kurier
             Package package;
             if (Owner is CourierParcelWindow) { package = (Package)((CourierParcelWindow)Owner).PackagesListBox.SelectedItem; }
             else { package = (Package)((AdminParcelWindow)Owner).PackagesListBox.SelectedItem; }
-            package.State = PackageState.Assigned;
         }
         void SetPackageCancelled(object sender, RoutedEventArgs e)
         {
