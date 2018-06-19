@@ -52,7 +52,11 @@ namespace Projekt_kurier
 
         private void Delete(object sender, RoutedEventArgs e)
         {
-
+            Courier courier = new Courier();
+            courier = (Courier)CouriersListBox.SelectedItem;
+            for (int i = 0; i < DB.PackagesList.Count(); i++)
+                if (courier == DB.PackagesList[i].AssignedCourier)
+                    DB.PackagesList[i].AssignedCourier = null;
             DB.CouriersList.RemoveAt(CouriersListBox.SelectedIndex);
             CouriersListBox.Items.Refresh();
         }
