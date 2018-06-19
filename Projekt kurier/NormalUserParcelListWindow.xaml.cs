@@ -68,7 +68,7 @@ namespace Projekt_kurier
         {
             get
             {
-                return (ListCollectionView)CollectionViewSource.GetDefaultView(DB.PackagesList);
+                return (ListCollectionView)CollectionViewSource.GetDefaultView(DB.Instance.Packages);
             }
         }
         private void ParcelStatusSort_Selected(object sender, RoutedEventArgs e)
