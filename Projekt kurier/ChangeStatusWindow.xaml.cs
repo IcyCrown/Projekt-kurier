@@ -29,12 +29,17 @@ namespace Projekt_kurier
             if (Owner is CourierParcelWindow) { package = (Package)((CourierParcelWindow)Owner).PackagesListBox.SelectedItem; }
             else { package = (Package)((AdminParcelWindow)Owner).PackagesListBox.SelectedItem; }
             package.State = PackageState.Delivered;
+            package.LastModification = DateTime.Now;
+            this.Close();
         }
         void SetPackageAssigned(object sender, RoutedEventArgs e)
         {
             Package package;
             if (Owner is CourierParcelWindow) { package = (Package)((CourierParcelWindow)Owner).PackagesListBox.SelectedItem; }
             else { package = (Package)((AdminParcelWindow)Owner).PackagesListBox.SelectedItem; }
+            package.State = PackageState.Pending;
+            package.LastModification = DateTime.Now;
+            this.Close();
         }
         void SetPackageCancelled(object sender, RoutedEventArgs e)
         {
@@ -42,6 +47,9 @@ namespace Projekt_kurier
             if (Owner is CourierParcelWindow) { package = (Package)((CourierParcelWindow)Owner).PackagesListBox.SelectedItem; }
             else { package = (Package)((AdminParcelWindow)Owner).PackagesListBox.SelectedItem; }
             package.State = PackageState.Cancelled;
+            package.LastModification = DateTime.Now;
+            this.Close();
         }
+
     }
 }

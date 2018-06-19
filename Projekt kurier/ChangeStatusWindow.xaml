@@ -9,8 +9,8 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Name="PackageDeliveredButton" Height="50" Margin="2.5" Style="{StaticResource GreenButtonStyle}">Dostarczono</Button>
-        <Button Name="PackageAssignedButton" Height="50" Grid.Column="1" Margin="2.5" Style="{StaticResource OrangeButtonStyle}">W trakcie</Button>
-        <Button Name="PackageCancelledButton" Height="50" Grid.Column="2" Margin="2.5" Style="{StaticResource RedButtonStyle}">Anulowano</Button>
+        <Button Click="SetPackageDelivered" Name="PackageDeliveredButton" Height="50" Margin="2.5" Style="{StaticResource GreenButtonStyle}">Dostarczono</Button>
+        <Button Click="SetPackageAssigned"  Name="PackageAssignedButton" Height="50" Grid.Column="1" Margin="2.5" Style="{StaticResource OrangeButtonStyle}">W trakcie</Button>
+        <Button Click="SetPackageCancelled" Name="PackageCancelledButton" Height="50" Grid.Column="2" Margin="2.5" Style="{StaticResource RedButtonStyle}">Anulowano</Button>
     </Grid>
 </Window>

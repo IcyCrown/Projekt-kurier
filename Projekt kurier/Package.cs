@@ -17,6 +17,7 @@ namespace Projekt_kurier
         public string Description { get; set; }
         public Courier AssignedCourier { get; set; }
         public PackageState State { get; set; }
+        public DateTime LastModification { get; set; }
 
         public Package() { }
         public Package(User sender, string recipientname, string recipientsurname, string recipientaddress, string description)
