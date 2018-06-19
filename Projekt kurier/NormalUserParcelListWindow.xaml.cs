@@ -60,7 +60,7 @@ namespace Projekt_kurier
         {
             EditParcelDataWindow epdw = new EditParcelDataWindow();
             epdw.Owner = this;
-            epdw.DataContext = this;
+            epdw.DataContext = userListBox.SelectedItem;
             epdw.ShowDialog();
         }
 
