@@ -24,10 +24,10 @@
             <Label Grid.Row="2" Margin="2.5">Login:</Label>
             <Label Grid.Row="3" Margin="2.5">Hasło:</Label>
 
-            <TextBox Name="NameTextBox" Grid.Column="1" Margin="2.5"></TextBox>
-            <TextBox Name="SurnameTextBox" Grid.Row="1" Grid.Column="1" Margin="2.5"></TextBox>
-            <TextBox Name="LoginTextBox" Grid.Row="2" Grid.Column="1" Margin="2.5"></TextBox>
-            <TextBox Name="PasswordTextBox" Grid.Row="3" Grid.Column="1" Margin="2.5"></TextBox>
+            <TextBox x:Name="NameTextBox" Grid.Column="1" Margin="2.5" Text="{Binding Path=Name, UpdateSourceTrigger=Explicit, Mode=TwoWay, ValidatesOnExceptions=True}"></TextBox>
+            <TextBox x:Name="SurnameTextBox" Grid.Row="1" Grid.Column="1" Margin="2.5" Text="{Binding Path=Surname, UpdateSourceTrigger=Explicit, Mode=TwoWay, ValidatesOnExceptions=True}"></TextBox>
+            <TextBox x:Name="LoginTextBox" Grid.Row="2" Grid.Column="1" Margin="2.5" Text="{Binding Path=Login, UpdateSourceTrigger=Explicit, Mode=TwoWay, ValidatesOnExceptions=True}"></TextBox>
+            <TextBox x:Name="PasswordTextBox" Grid.Row="3" Grid.Column="1" Margin="2.5" Text="{Binding Path=Password, UpdateSourceTrigger=Explicit, Mode=TwoWay, ValidatesOnExceptions=True}"></TextBox>
 
         </Grid>
         <Grid Grid.Row="1">
@@ -35,8 +35,8 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Margin="2.5">Zapisz</Button>
-            <Button Grid.Column="1" Margin="2.5">Wyjdź</Button>
+            <Button Margin="2.5" Click="Save_Click_Button">Zapisz</Button>
+            <Button Grid.Column="1" Margin="2.5" Click="Exit_Click_Button">Wyjdź</Button>
         </Grid>
     </Grid>
 </Window>
