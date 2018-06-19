@@ -21,13 +21,34 @@ namespace Projekt_kurier
     {
         public NormalUserParcelListWindow()
         {
-            InitializeComponent();
-            userListBox.ItemsSource = DB.PackagesList;
+                InitializeComponent();
         }
 
         private void userListBox_SourceUpdated(object sender, DataTransferEventArgs e)
         {
             userListBox.Items.Refresh();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                userListBox.ItemsSource = from package in DB.PackagesList
+                                              where package.Sender.Login == ((NormalUserWindow)Owner).CurrentUser.Login
+                                              select package;
+            }
+            catch (NullReferenceException) { }
+        }
+
+        private void Remove_Click(object sender, RoutedEventArgs e)
+        {
+            DB.PackagesList.RemoveAt(userListBox.SelectedIndex);
+            userListBox.Items.Refresh();
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
