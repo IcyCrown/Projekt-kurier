@@ -50,5 +50,13 @@ namespace Projekt_kurier
         {
             this.Close();
         }
+
+        private void Edit_Click(object sender, RoutedEventArgs e)
+        {
+            EditParcelDataWindow epdw = new EditParcelDataWindow();
+            epdw.Owner = this;
+            epdw.DataContext = this;
+            epdw.ShowDialog();
+        }
     }
 }
