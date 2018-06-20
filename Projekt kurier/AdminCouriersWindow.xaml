@@ -4,26 +4,24 @@
         Title="Panel Administratora - Kurierzy" Height="350" Width="550" MinHeight="350" MinWidth="550" MaxWidth="1200" MaxHeight="700">
     <Window.Resources>
         <DataTemplate x:Key="CourierDataTemplate">
-            <Grid Background="{StaticResource TransparentBrush}" Height="50">
-                <Border Height="auto" Width="auto" CornerRadius="5,0,0,5">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="auto"/>
-                        </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0">Id:</Label>
-                        <Label Grid.Column="1" Content="{Binding Path=Login }"/>
-                        <Label Grid.Column="2">Imie:</Label>
-                        <Label Grid.Column="3" Content="{Binding Path=Name }"/>
-                        <Label Grid.Column="4">Nazwisko:</Label>
-                        <Label Grid.Column="5" Content="{Binding Path=Surname }"/>
-                    </Grid>
-                </Border>
-            </Grid>
+            <Border Height="30" Width="auto" BorderBrush="{StaticResource MainThemeBorderBrush}" BorderThickness="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0">Id:</Label>
+                    <Label Grid.Column="1" Content="{Binding Path=Login }"/>
+                    <Label Grid.Column="2">Imie:</Label>
+                    <Label Grid.Column="3" Content="{Binding Path=UserName }"/>
+                    <Label Grid.Column="4">Nazwisko:</Label>
+                    <Label Grid.Column="5" Content="{Binding Path=UserSurname }"/>
+                </Grid>
+            </Border>
         </DataTemplate>
     </Window.Resources>
     <Grid>
