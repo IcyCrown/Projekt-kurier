@@ -44,6 +44,7 @@ namespace Projekt_kurier
         {
             NormalUserPersonalDataWindow win = new NormalUserPersonalDataWindow();
             win.Owner = this;
+            win.DataContext = CurrentUser;
             win.ShowDialog(); 
         }
 
