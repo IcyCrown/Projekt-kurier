@@ -23,6 +23,8 @@ namespace Projekt_kurier
         public AdminNormalUsersWindow()
         {
             InitializeComponent();
+            EditButton.IsEnabled = false;
+            DeleteButton.IsEnabled = false;
             NormalUsersListBox.ItemsSource = DB.Instance.Users;
         }
         private ListCollectionView View
@@ -71,6 +73,20 @@ namespace Projekt_kurier
         {
             View.SortDescriptions.Clear();
             View.SortDescriptions.Add(new SortDescription("Login", ListSortDirection.Ascending));
+        }
+
+        private void NormalUsersListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(NormalUsersListBox.SelectedIndex>=0)
+            {
+                EditButton.IsEnabled = true;
+                DeleteButton.IsEnabled = true;
+            }
+            else
+            {
+                EditButton.IsEnabled = false;
+                DeleteButton.IsEnabled = false;
+            }
         }
 
         private void SearchId(object sender, RoutedEventArgs e)

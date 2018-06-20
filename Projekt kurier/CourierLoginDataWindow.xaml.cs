@@ -23,5 +23,32 @@ namespace Projekt_kurier
         {
             InitializeComponent();
         }
+
+        private void Save(object sender, RoutedEventArgs e)
+        {
+            if(NewPasswordTextBox.Text != ConfirmPasswordTextBox.Text)
+            {
+                MessageBox.Show("Podane hasła się różnią!");
+                return;
+            }
+            Courier c = null;
+            c = (from courier in DB.CouriersList
+                 where courier.Login == NewLoginTextBox.Text
+                 select courier).First();
+            if (c != null && NewLoginTextBox.Text != ((CourierWindow)Owner).CurrentCourier.Login)
+            {
+                MessageBox.Show("Podany login jest zajęty!");
+                NewLoginTextBox.BorderBrush = new SolidColorBrush(Colors.Red);
+                return;
+            }
+            ((CourierWindow)Owner).CurrentCourier.Login = NewLoginTextBox.Text;
+            ((CourierWindow)Owner).CurrentCourier.Password = NewPasswordTextBox.Text;
+            Close();
+        }
+
+        private void Close(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

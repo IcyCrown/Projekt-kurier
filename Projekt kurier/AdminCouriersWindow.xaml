@@ -54,7 +54,7 @@
                 <Button Click="SearchID" Grid.Column="3" Margin="5">Szukaj</Button>
                 <Rectangle Width="1" Height="40" Grid.Column="4" Fill="{StaticResource MainThemeBorderBrush}"></Rectangle>
             </Grid>
-            <ListBox Name="CouriersListBox" Grid.Row="1" ItemTemplate="{StaticResource CourierDataTemplate}"></ListBox>
+            <ListBox Name="CouriersListBox" Grid.Row="1" ItemTemplate="{StaticResource CourierDataTemplate}" SelectionChanged="CouriersListBox_SelectionChanged"></ListBox>
         </Grid>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
@@ -66,8 +66,8 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
             <Button Click="Add" Margin="2.5" Style="{StaticResource GreenButtonStyle}" Height="50">Dodaj</Button>
-            <Button Grid.Row="1" Click="Edit" Margin="2.5" Style="{StaticResource OrangeButtonStyle}" Height="50">Edytuj</Button>
-            <Button Grid.Row="2" Click="Delete" Margin="2.5" Style="{StaticResource RedButtonStyle}" Height="50">Usuń</Button>
+            <Button Grid.Row="1" Click="Edit" Name="EditButton" Margin="2.5" Style="{StaticResource OrangeButtonStyle}" Height="50">Edytuj</Button>
+            <Button Grid.Row="2" Click="Delete" Name="DeleteButton" Margin="2.5" Style="{StaticResource RedButtonStyle}" Height="50">Usuń</Button>
             <Button Grid.Row="3" Click="Close" Margin="2.5" Style="{StaticResource RedButtonStyle}" Height="50">Wyjdź</Button>
         </Grid>
 

@@ -24,6 +24,8 @@ namespace Projekt_kurier
         {
             InitializeComponent();
             CouriersListBox.ItemsSource = DB.Instance.Couriers;
+            DeleteButton.IsEnabled = false;
+            EditButton.IsEnabled = false;
         }
 
         private ListCollectionView View
@@ -95,6 +97,20 @@ namespace Projekt_kurier
                            where id.Contains(SearchIDTextBox.Text)
                            select co;
             CouriersListBox.ItemsSource = filtered;
+        }
+
+        private void CouriersListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(CouriersListBox.SelectedIndex>=0)
+            {
+                EditButton.IsEnabled = true;
+                DeleteButton.IsEnabled = true;
+            }
+            else
+            {
+                EditButton.IsEnabled = false;
+                DeleteButton.IsEnabled = false;
+            }
         }
     }
 }

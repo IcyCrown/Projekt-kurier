@@ -22,6 +22,11 @@ namespace Projekt_kurier
         public AdminParcelWindow()
         {
             InitializeComponent();
+            AssignButton.IsEnabled = false;
+            DescriptionButton.IsEnabled = false;
+            EditButton.IsEnabled = false;
+            ChangeStatusButton.IsEnabled = false;
+            DeleteButton.IsEnabled = false;
             PackagesListBox.ItemsSource = DB.PackagesList;
         }
 
@@ -61,6 +66,26 @@ namespace Projekt_kurier
         private void Close(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void PackagesListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (PackagesListBox.SelectedIndex >= 0)
+            {
+                AssignButton.IsEnabled = true;
+                DescriptionButton.IsEnabled = true;
+                EditButton.IsEnabled = true;
+                ChangeStatusButton.IsEnabled = true;
+                DeleteButton.IsEnabled = true;
+            }
+            else
+            {
+                AssignButton.IsEnabled = false;
+                DescriptionButton.IsEnabled = false;
+                EditButton.IsEnabled = false;
+                ChangeStatusButton.IsEnabled = false;
+                DeleteButton.IsEnabled = false;
+            }
         }
     }
 }

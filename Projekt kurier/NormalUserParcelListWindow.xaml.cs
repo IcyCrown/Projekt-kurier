@@ -26,7 +26,10 @@ namespace Projekt_kurier
     {
         public NormalUserParcelListWindow()
         {
-                InitializeComponent();
+            InitializeComponent();
+            checkButton.IsEnabled = false;
+            editButton.IsEnabled = false;
+            removeButton.IsEnabled = false;
         }
 
         private void userListBox_SourceUpdated(object sender, DataTransferEventArgs e)
@@ -108,6 +111,22 @@ namespace Projekt_kurier
         private void ParcelIDSort_Selected(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        private void userListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (userListBox.SelectedIndex>=0)
+            {
+                checkButton.IsEnabled = true;
+                editButton.IsEnabled = true;
+                removeButton.IsEnabled = true;
+            }
+            else
+            {
+                checkButton.IsEnabled = false;
+                editButton.IsEnabled = false;
+                removeButton.IsEnabled = false;
+            }
         }
     }
 }

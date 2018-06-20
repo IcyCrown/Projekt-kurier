@@ -68,5 +68,6 @@ namespace Projekt_kurier
             cu.Password = DBcu.Password = NewPasswordPasswordBox.Password;
             MessageBox.Show("Pomyślnie zmieniono dane!");
         }
+        
     }
 }

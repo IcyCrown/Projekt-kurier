@@ -27,9 +27,9 @@
             <Label Grid.Row="3" Margin="2.5">Nowy Login:</Label>
             <Label Grid.Row="4" Margin="2.5">Nowe Hasło:</Label>
             <Label Grid.Row="5" Margin="2.5">Powtórz Hasło:</Label>
-            <TextBox Name="NameTextBox" Grid.Column="1" Margin="2.5"></TextBox>
-            <TextBox Name="SurnameTextBox" Grid.Row="1" Grid.Column="1" Margin="2.5"></TextBox>
-            <TextBox Name="AddressTextBox" Grid.Row="2" Grid.Column="1" Margin="2.5"></TextBox>
+            <TextBox Text="{Binding Path=UserName, Mode=OneTime, ValidatesOnExceptions=True}" Name="NameTextBox" Grid.Column="1" Margin="2.5"></TextBox>
+            <TextBox Text="{Binding Path=UserSurname, Mode=OneTime, ValidatesOnExceptions=True}" Name="SurnameTextBox" Grid.Row="1" Grid.Column="1" Margin="2.5"></TextBox>
+            <TextBox Text="{Binding Path=UserAddress, Mode=OneTime, ValidatesOnExceptions=True}" Name="AddressTextBox" Grid.Row="2" Grid.Column="1" Margin="2.5"></TextBox>
             <TextBox Name="NewLoginTextBox" Grid.Row="3" Grid.Column="1" Margin="2.5"></TextBox>
             <PasswordBox Name="NewPasswordPasswordBox" Grid.Row="4" Grid.Column="1" Margin="2.5"/>
             <PasswordBox Name="ConfirmPasswordPasswordBox" Grid.Row="5" Grid.Column="1" Margin="2.5"></PasswordBox>
