@@ -30,6 +30,7 @@ namespace Projekt_kurier
             checkButton.IsEnabled = false;
             editButton.IsEnabled = false;
             removeButton.IsEnabled = false;
+            userListBox.ItemsSource = DB.PackagesList;
         }
 
         private void userListBox_SourceUpdated(object sender, DataTransferEventArgs e)
@@ -39,19 +40,30 @@ namespace Projekt_kurier
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            try
+            View.Filter = delegate (object item)
             {
-                userListBox.ItemsSource = from package in DB.Instance.Packages
-                where package.Sender.Login == ((NormalUserWindow)Owner).CurrentUser.Login
-                                              select package;
-            }
-            catch (NullReferenceException) { }
+                Package package = item as Package;
+                if (package != null)
+                {
+                    return (package.Sender.Login == ((NormalUserWindow)Owner).CurrentUser.Login);
+                }
+                return false;
+            };
+
+            //try
+            //{
+            //    userListBox.ItemsSource = from package in DB.Instance.Packages
+            //                              where package.Sender.Login == ((NormalUserWindow)Owner).CurrentUser.Login
+            //                              select package;
+            //}
+            //catch (NullReferenceException) { }
         }
 
         private void Remove_Click(object sender, RoutedEventArgs e)
         {
-            DB.PackagesList.RemoveAt(userListBox.SelectedIndex);
+            DB.PackagesList.Remove((Package)userListBox.SelectedItem);
             userListBox.Items.Refresh();
+            View.Refresh();
         }
 
         private void Check_Status(object sender, RoutedEventArgs e)
