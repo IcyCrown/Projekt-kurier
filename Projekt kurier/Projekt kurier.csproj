@@ -66,9 +66,6 @@
     <Compile Include="AssignParcelWindow.xaml.cs">
       <DependentUpon>AssignParcelWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CheckStatusWindow.xaml.cs">
-      <DependentUpon>CheckStatusWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Courier.cs" />
     <Compile Include="CourierLoginDataWindow.xaml.cs">
       <DependentUpon>CourierLoginDataWindow.xaml</DependentUpon>
@@ -157,10 +154,6 @@
     <Page Include="ButtonStyles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="CheckStatusWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ColorBrushes.xaml">
       <SubType>Designer</SubType>

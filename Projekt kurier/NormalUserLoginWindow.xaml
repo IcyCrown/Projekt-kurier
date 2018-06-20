@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Projekt_kurier.NormalUserLoginWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="NormalUserLoginWindow" Height="145" Width="350"
+        Title="Logowanie Użytkownika" Height="145" Width="350"
         ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
     <Grid>
         <Grid.RowDefinitions>

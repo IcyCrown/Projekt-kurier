@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Projekt_kurier.CourierLoginWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="CourierLoginWindow" Height="145" Width="350"
+        Title="Logowanie Kuriera" Height="145" Width="350"
         ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
     <Grid>
         <Grid.RowDefinitions>

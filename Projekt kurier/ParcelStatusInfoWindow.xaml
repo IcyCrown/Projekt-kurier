@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Projekt_kurier"
         mc:Ignorable="d"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
-        Title="ParcelStatusInfoWindow" Height="140" Width="400" ResizeMode="NoResize"
+        Title="Status Przesyłki" Height="140" Width="400" ResizeMode="NoResize"
         DataContext="{Binding Source=WindowSettings}">
     <Window.Resources>
         <local:ParcelStateVisiblityConverter x:Key="ParcelStateVisibilityConverter"/>

@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Projekt_kurier.AdminWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="AdminWindow" Height="621.5" Width="600" MinHeight="321.5" MinWidth="300" MaxHeight="621.5" MaxWidth="600"
+        Title="Panel Administratora" Height="621.5" Width="600" MinHeight="321.5" MinWidth="300" MaxHeight="621.5" MaxWidth="600"
         WindowStartupLocation="CenterScreen" SizeChanged="SqareResize">
     <Grid>
         <Grid.RowDefinitions>

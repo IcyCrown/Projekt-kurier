@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Projekt_kurier.AdminCouriersWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="AdminCouriersWindow" Height="350" Width="550" MinHeight="350" MinWidth="550" MaxWidth="1200" MaxHeight="700">
+        Title="Panel Administratora - Kurierzy" Height="350" Width="550" MinHeight="350" MinWidth="550" MaxWidth="1200" MaxHeight="700">
     <Window.Resources>
         <DataTemplate x:Key="CourierDataTemplate">
             <Grid Background="{StaticResource TransparentBrush}" Height="50">
