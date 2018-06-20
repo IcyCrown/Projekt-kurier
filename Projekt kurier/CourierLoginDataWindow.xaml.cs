@@ -44,5 +44,10 @@ namespace Projekt_kurier
             ((CourierWindow)Owner).CurrentCourier.Login = NewLoginTextBox.Text;
             ((CourierWindow)Owner).CurrentCourier.Password = NewPasswordTextBox.Text;
         }
+
+        private void Close(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
