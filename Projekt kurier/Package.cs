@@ -27,6 +27,7 @@ namespace Projekt_kurier
             RecipientSurname = recipientsurname;
             RecipientAddress = recipientaddress;
             Description = description;
+            LastModification = DateTime.Now;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
