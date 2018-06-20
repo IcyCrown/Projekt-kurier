@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.ComponentModel;
 
 namespace Projekt_kurier
 {
@@ -22,8 +23,15 @@ namespace Projekt_kurier
         public AdminNormalUsersWindow()
         {
             InitializeComponent();
+            NormalUsersListBox.ItemsSource = DB.Instance.Users;
         }
-
+        private ListCollectionView View
+        {
+            get
+            {
+                return (ListCollectionView)CollectionViewSource.GetDefaultView(DB.Instance.Users);
+            }
+        }
         private void Add(object sender, RoutedEventArgs e)
         {
             AddNormalUserWindow win = new AddNormalUserWindow();
@@ -35,6 +43,7 @@ namespace Projekt_kurier
         {
             EditNormalUserDataWindow win = new EditNormalUserDataWindow();
             win.Owner = this;
+            win.DataContext = NormalUsersListBox.SelectedItem;
             win.ShowDialog();
         }
 
@@ -45,6 +54,23 @@ namespace Projekt_kurier
         private void Close(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+        private void NoSort_Selected(object sender, RoutedEventArgs e)
+        {
+            View.SortDescriptions.Clear();
+        }
+
+        private void SurnameSort_Selected(object sender, RoutedEventArgs e)
+        {
+            View.SortDescriptions.Clear();
+            View.SortDescriptions.Add(new SortDescription("UserSurname", ListSortDirection.Ascending));
+        }
+
+
+        private void IdSort_Selected(object sender, RoutedEventArgs e)
+        {
+            View.SortDescriptions.Clear();
+            View.SortDescriptions.Add(new SortDescription("Login", ListSortDirection.Ascending));
         }
     }
 }
