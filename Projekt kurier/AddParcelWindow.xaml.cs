@@ -30,6 +30,11 @@ namespace Projekt_kurier
             //User userSender = (User)from user in DB.UsersList
             //              where user.UserName == senderName.Text && user.UserSurname == senderSurname.Text && user.UserAddress == senderAddress.Text
             //              select user;
+            if (recipientName.Text == String.Empty || recipientSurname.Text == String.Empty || recipientAddress.Text == String.Empty)
+            {
+                MessageBox.Show("Uzupełnij puste pola!");
+                return;
+            }
             User userSender = ((NormalUserWindow)Owner).CurrentUser;
             DB.PackagesList.Add(new Package(userSender, recipientName.Text, recipientSurname.Text, recipientAddress.Text, description.Text));
             DB.PackagesList.Last().State = PackageState.Pending;
