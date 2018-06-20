@@ -43,10 +43,5 @@ namespace Projekt_kurier
             this.Close();
             win.ShowDialog();
         }
-
-        private void Exit(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
     }
 }
