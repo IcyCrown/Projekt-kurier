@@ -44,6 +44,7 @@ namespace Projekt_kurier
             AssignParcelWindow win = new AssignParcelWindow();
             win.Owner = this;
             win.ShowDialog();
+            View.Refresh();
         }
 
         private void Edit(object sender, RoutedEventArgs e)
@@ -51,11 +52,14 @@ namespace Projekt_kurier
             EditParcelDataWindow win = new EditParcelDataWindow();
             win.Owner = this;
             win.ShowDialog();
+            View.Refresh();
         }
 
         private void Delete(object sender, RoutedEventArgs e)
         {
-
+            DB.PackagesList.Remove((Package)PackagesListBox.SelectedItem);
+            PackagesListBox.Items.Refresh();
+            View.Refresh();
         }
 
         private void ChangeStatus(object sender, RoutedEventArgs e)
@@ -97,24 +101,23 @@ namespace Projekt_kurier
                 DeleteButton.IsEnabled = false;
             }
         }
-        private void NoSort_Selected(object sender, RoutedEventArgs e)
+        private void NoFiltr_Selected(object sender, RoutedEventArgs e)
         {
-            View.SortDescriptions.Clear();
+            View.Filter = null;
             View.Refresh();
         }
-
-        private void StatusPackageSort_Selected(object sender, RoutedEventArgs e)
-        {
-            View.SortDescriptions.Clear();
-            View.SortDescriptions.Add(new SortDescription("State", ListSortDirection.Ascending));
-            View.Refresh();
-        }
-
-
-        private void IdSort_Selected(object sender, RoutedEventArgs e)
-        {
-            View.SortDescriptions.Clear();
-            View.SortDescriptions.Add(new SortDescription("Login", ListSortDirection.Ascending));
+       
+        private void NoCourierFiltr_Selected(object sender, RoutedEventArgs e)
+        {      
+                View.Filter = delegate (object item)
+                {
+                    Package package = item as Package;
+                    if (package!=null)
+                    {
+                        return (package.AssignedCourier == null);
+                    }
+                    return false;
+                };
             View.Refresh();
         }
 
