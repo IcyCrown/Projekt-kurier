@@ -51,6 +51,13 @@ namespace Projekt_kurier
             userListBox.Items.Refresh();
         }
 
+        private void Check_Status(object sender, RoutedEventArgs e)
+        {
+            SettingSource settings = new SettingSource(DB.PackagesList[userListBox.SelectedIndex].State);
+            ParcelStatusInfoWindow win = new ParcelStatusInfoWindow(settings);
+            win.Owner = this;
+            win.ShowDialog();
+        }
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
