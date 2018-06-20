@@ -31,9 +31,9 @@
             <Label Grid.Row="5" Margin="2.5">Adres Odbiorcy:</Label>
             <Label Grid.Row="6" Margin="2.5">Opis:</Label>
 
-            <TextBox x:Name="senderName" Grid.Column="1" Margin="2.5"></TextBox>
-            <TextBox x:Name="senderSurname" Grid.Row="1" Grid.Column="1" Margin="2.5"></TextBox>
-            <TextBox x:Name="senderAddress" Grid.Row="2" Grid.Column="1" Margin="2.5"></TextBox>
+            <TextBox Text="{Binding Path=UserName, Mode=OneTime, ValidatesOnExceptions=True}" x:Name="senderName" Grid.Column="1" Margin="2.5"></TextBox>
+            <TextBox Text="{Binding Path=UserSurname, Mode=OneTime, ValidatesOnExceptions=True}" x:Name="senderSurname" Grid.Row="1" Grid.Column="1" Margin="2.5"></TextBox>
+            <TextBox Text="{Binding Path=UserAddress, Mode=OneTime, ValidatesOnExceptions=True}" x:Name="senderAddress" Grid.Row="2" Grid.Column="1" Margin="2.5"></TextBox>
             <TextBox x:Name="recipientName" Grid.Row="3" Grid.Column="1" Margin="2.5"></TextBox>
             <TextBox x:Name="recipientSurname" Grid.Row="4" Grid.Column="1" Margin="2.5"></TextBox>
             <TextBox x:Name="recipientAddress" Grid.Row="5" Grid.Column="1" Margin="2.5"></TextBox>
