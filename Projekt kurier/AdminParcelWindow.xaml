@@ -30,9 +30,8 @@
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
                 <ComboBox SelectedIndex="0" Margin="5" Width="210">
-                    <ComboBoxItem Selected="NoSort_Selected">Bez sortowania</ComboBoxItem>
-                    <ComboBoxItem Selected="IdSort_Selected">Sortuj wg ID</ComboBoxItem>
-                    <ComboBoxItem Selected="StatusPackageSort_Selected">Sortuj wg stanu przesyłki</ComboBoxItem>
+                    <ComboBoxItem Selected="NoFiltr_Selected">Bez filtru</ComboBoxItem>
+                    <ComboBoxItem Selected="NoCourierFiltr_Selected">Paczki bez kurierow</ComboBoxItem>
                 </ComboBox>
                 <ComboBox SelectedIndex="0" Grid.Column="1" Margin="5" Width="240">
                     <ComboBoxItem Selected="NoGroup_Selected">Bez grupowania</ComboBoxItem>

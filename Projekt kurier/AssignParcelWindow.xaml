@@ -21,7 +21,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Button Grid.Row="1" Click="Assign" Margin="2.5">Przydziel</Button>
-            <Button Grid.Row="1" Grid.Column="1" Margin="2.5">Wyjdź</Button>
+            <Button Grid.Row="1" Grid.Column="1" Margin="2.5" Click="Exit_Click">Wyjdź</Button>
         </Grid>
     </Grid>
 </Window>

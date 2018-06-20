@@ -37,5 +37,10 @@ namespace Projekt_kurier
             catch (InvalidOperationException) { MessageBox.Show("Kurier o podanym loginie nie istnieje!"); }
             Close();
         }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
