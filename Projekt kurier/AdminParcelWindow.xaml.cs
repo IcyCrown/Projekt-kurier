@@ -63,6 +63,7 @@ namespace Projekt_kurier
             ChangeStatusWindow win = new ChangeStatusWindow();
             win.Owner = this;
             win.ShowDialog();
+            View.Refresh();
         }
 
         private void ShowDescription(object sender, RoutedEventArgs e)
@@ -119,17 +120,16 @@ namespace Projekt_kurier
 
         private void NoGroup_Selected(object sender, RoutedEventArgs e)
         {
+            View.GroupDescriptions.Clear();
+            View.Refresh();
         }
 
         private void StateGroup_Selected(object sender, RoutedEventArgs e)
         {
             View.CustomSort = new SortByState();
             StateGrouper grouper = new StateGrouper();
-            View.GroupDescriptions.Add(new PropertyGroupDescription("Stan", grouper));
-        }
-
-        private void DateGroup_Selected(object sender, RoutedEventArgs e)
-        {
+            View.GroupDescriptions.Add(new PropertyGroupDescription("State", grouper));
+            View.Refresh();
         }
     }
 }
