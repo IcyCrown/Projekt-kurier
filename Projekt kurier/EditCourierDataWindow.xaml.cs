@@ -32,7 +32,9 @@ namespace Projekt_kurier
             binding.UpdateSource();
             binding = PasswordTextBox.GetBindingExpression(TextBox.TextProperty);
             binding.UpdateSource();
-     
+            binding = LoginTextBox.GetBindingExpression(TextBox.TextProperty);
+            binding.UpdateSource();
+
         }
 
         private void Exit_Click_Button(object sender, RoutedEventArgs e)

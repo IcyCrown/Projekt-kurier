@@ -1,20 +1,19 @@
 ﻿<Window x:Class="Projekt_kurier.AdminNormalUsersWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Panel Administratora - Użytkownicy" Height="350" Width="550" MinHeight="350" MinWidth="550" MaxWidth="1200" MaxHeight="700"
+        Title="Panel Administratora - Użytkownicy" Height="350" Width="750" MinHeight="350" MinWidth="750" MaxWidth="1200" MaxHeight="700"
         >
     <Window.Resources>
         <DataTemplate x:Key="NormalUsersDataTemplate">
-            <Grid Background="{StaticResource TransparentBrush}" Height="50">
-                <Border Height="auto" Width="auto" CornerRadius="5,0,0,5">
+            <Border Height="30" Width="auto" BorderBrush="{StaticResource MainThemeBorderBrush}" BorderThickness="1">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="150"/>
                             <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="150"/>
                             <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Label Grid.Column="0">Id:</Label>
                         <Label Grid.Column="1" Content="{Binding Path=Login }"/>
@@ -24,7 +23,6 @@
                         <Label Grid.Column="5" Content="{Binding Path=UserSurname }"/>
                     </Grid>
                 </Border>
-            </Grid>
         </DataTemplate>
     </Window.Resources>
     <Grid>

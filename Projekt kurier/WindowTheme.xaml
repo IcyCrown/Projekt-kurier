@@ -18,13 +18,13 @@
                 Delivered="Dostarczono"
                 Cancelled="Anulowano"
         />
-    <!--Grid Style-->
+    <!-- Grid Style -->
     <Style TargetType="Grid">
         <Setter Property="Background" Value="{StaticResource GridBackgroundBrush}" />
     </Style>
 
 
-    <!--Label Style-->
+    <!-- Label Style -->
     <Style TargetType="Label">
         <Setter Property="Foreground" Value="{StaticResource LabelForegroundBrush}" />
         <Setter Property="FontSize" Value="15" />
@@ -34,7 +34,7 @@
     </Style>
 
 
-    <!--ToolTip Style-->
+    <!-- ToolTip Style -->
     <Style TargetType="ToolTip">
         <Setter Property="OverridesDefaultStyle" Value="true" />
         <Setter Property="FontFamily" Value="Segoe UI" />
@@ -49,7 +49,7 @@
                 <ControlTemplate TargetType="ToolTip">
                     <Grid>
                         <Rectangle Stroke="{TemplateBinding BorderBrush}" Fill="{TemplateBinding Background}" StrokeThickness="{TemplateBinding BorderThickness}" />
-                        <StackPanel Orientation="Horizontal" d:LayoutOverrides="Width, Height">
+                        <StackPanel Orientation="Horizontal">
                             <ContentPresenter Margin="{TemplateBinding Padding}" Content="{TemplateBinding Content}" />
                         </StackPanel>
                     </Grid>
@@ -408,7 +408,7 @@
     </Style>
 
 
-    <!-- *********************************  ScrollBar Style  ********************************* -->
+    <!-- ScrollBar Style -->
     <Style x:Key="ScrollBarStyle" TargetType="ScrollBar">
         <Setter Property="Stylus.IsPressAndHoldEnabled" Value="false" />
         <Setter Property="Stylus.IsFlicksEnabled" Value="false" />
@@ -547,7 +547,7 @@
     </Style>
 
 
-    <!-- *********************************  ComboBoxToggleButton Style   ********************************* -->
+    <!-- ComboBoxToggleButton Style -->
     <Style x:Key="ComboBoxToggleButtonStyle" TargetType="ToggleButton">
         <Setter Property="FontSize" Value="15" />
         <Setter Property="FontFamily" Value="Segoe UI" />
@@ -631,7 +631,7 @@
     </Style>
 
 
-    <!-- *********************************  ScrollViewer Style ********************************* -->
+    <!-- ScrollViewer Style -->
     <Style x:Key="ScrollViewerStyle" TargetType="ScrollViewer">
         <Setter Property="Foreground" Value="{StaticResource MainThemeForegroundBrush}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
@@ -662,7 +662,7 @@
     </Style>
 
 
-    <!--ComboBoxItem-->
+    <!-- ComboBoxItem -->
     <Style x:Key="ComboBoxItemStyle" TargetType="ComboBoxItem">
         <Setter Property="FontSize" Value="15" />
         <Setter Property="FontFamily" Value="Segoe UI" />
@@ -770,7 +770,7 @@
     </Style>
 
 
-    <!--ComboBox Style-->
+    <!-- ComboBox Style -->
     <Style TargetType="ComboBox">
         <Setter Property="Padding" Value="6,1,6,3" />
         <Setter Property="Margin" Value="0" />
@@ -1467,7 +1467,7 @@
                         <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="250"/>
                         <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="250"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
@@ -1515,8 +1515,24 @@
                             <RowDefinition/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
-                        <Label Content="{Binding Path=AssignedCourier.Name}"></Label>
-                        <Label Grid.Row="1" Content="{Binding Path=AssignedCourier.Surname}"></Label>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Label>Przydzielony kurier:</Label>
+                            <Label Grid.Column="1" Content="{Binding Path=AssignedCourier.Name}"></Label>
+                            <Label Grid.Column="2" Content="{Binding Path=AssignedCourier.Surname}"></Label>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Ostatnia zmiana statusu:"></Label>
+                            <Label Grid.Column="1" Content="{Binding Path=LastModification}" Foreground="{Binding Path=State, Converter={StaticResource ParcelStateBrushConverter}}"></Label>
+                        </Grid>
                     </Grid>
                 </Grid>
             </Border>

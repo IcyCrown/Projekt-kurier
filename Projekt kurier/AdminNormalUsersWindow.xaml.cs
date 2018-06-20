@@ -51,7 +51,13 @@ namespace Projekt_kurier
 
         private void Delete(object sender, RoutedEventArgs e)
         {
-
+            User user = new User();
+            user = (User)NormalUsersListBox.SelectedItem;
+            for (int i = 0; i < DB.PackagesList.Count(); i++)
+                if (user == DB.PackagesList[i].Sender)
+                    DB.PackagesList[i].Sender = null;
+            DB.UsersList.RemoveAt(NormalUsersListBox.SelectedIndex);
+            NormalUsersListBox.Items.Refresh();
         }
         private void Close(object sender, RoutedEventArgs e)
         {
