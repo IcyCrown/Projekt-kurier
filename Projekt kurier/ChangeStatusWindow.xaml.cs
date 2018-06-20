@@ -32,8 +32,11 @@ namespace Projekt_kurier
                 ((CourierParcelWindow)Owner).PackagesListBox.Items.Refresh();
                 package.AssignedCourier.DeliveredPackagesCount++;
             }
-            else { package = (Package)((AdminParcelWindow)Owner).PackagesListBox.SelectedItem; }
-            ((AdminParcelWindow)Owner).PackagesListBox.Items.Refresh();
+            else
+            {
+                package = (Package)((AdminParcelWindow)Owner).PackagesListBox.SelectedItem;
+                ((AdminParcelWindow)Owner).PackagesListBox.Items.Refresh();
+            }
             package.State = PackageState.Delivered;
             package.LastModification = DateTime.Now;
             this.Close();

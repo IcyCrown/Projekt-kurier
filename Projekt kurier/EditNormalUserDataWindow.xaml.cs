@@ -19,6 +19,7 @@ namespace Projekt_kurier
     /// </summary>
     public partial class EditNormalUserDataWindow : Window
     {
+         public User uss { get; set; }
         public EditNormalUserDataWindow()
         {
             InitializeComponent();
@@ -26,6 +27,23 @@ namespace Projekt_kurier
 
         private void Save_Click_Button(object sender, RoutedEventArgs e)
         {
+            if (NameTextBox.Text == String.Empty || SurnameTextBox.Text == String.Empty || AddressTextBox.Text == String.Empty
+                || LoginTextBox.Text == String.Empty || PasswordTextBox.Text == String.Empty)
+            {
+                MessageBox.Show("Uzupełnij puste pola!");
+                return;
+            }
+            User us = null;
+            try
+            {
+                us = DB.UsersList.Where(u => u.Login == LoginTextBox.Text).Single();
+            }
+            catch (Exception) { }
+            if (us != null && uss.Login!=LoginTextBox.Text)
+            {
+                MessageBox.Show("Podany login jest zajety!");
+                return;
+            }
             BindingExpression binding = NameTextBox.GetBindingExpression(TextBox.TextProperty);
             binding.UpdateSource();
             binding = SurnameTextBox.GetBindingExpression(TextBox.TextProperty);
@@ -36,6 +54,7 @@ namespace Projekt_kurier
             binding.UpdateSource();
             binding = AddressTextBox.GetBindingExpression(TextBox.TextProperty);
             binding.UpdateSource();
+            MessageBox.Show("Aktualizacja danych powiodła się!");
         }
 
         private void Exit_Click_Button(object sender, RoutedEventArgs e)

@@ -48,6 +48,7 @@ namespace Projekt_kurier
             EditCourierDataWindow win = new EditCourierDataWindow();
             win.Owner = this;
             win.DataContext = CouriersListBox.SelectedItem;
+            win.css= (Courier)CouriersListBox.SelectedItem;
             win.ShowDialog();
 
         }
