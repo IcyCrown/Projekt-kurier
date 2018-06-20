@@ -30,7 +30,7 @@ namespace Projekt_kurier
             User us = null;
             try
             {
-                us = DB.UsersList.Where(u => u.Login == IDTextBox.Text && u.Password == PasswordTextBox.Text).Single();
+                us = DB.UsersList.Where(u => u.Login == IDTextBox.Text && u.Password == PasswordTextBox.Password).Single();
             }
             catch (Exception) { }
             if (us == null)

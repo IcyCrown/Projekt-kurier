@@ -28,7 +28,7 @@ namespace Projekt_kurier
         {
             AdminWindow win = new AdminWindow();
             win.Owner = this.Owner;
-            if (IDTextBox.Text != DB.Administrator.AdminLogin || PasswordTextBox.Text != DB.Administrator.AdminPassword)
+            if (IDTextBox.Text != DB.Administrator.AdminLogin || PasswordTextBox.Password != DB.Administrator.AdminPassword)
             {
                 MessageBox.Show("Podane dane są nieprawidłowe!");
                 return;

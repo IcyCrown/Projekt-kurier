@@ -31,7 +31,7 @@ namespace Projekt_kurier
             Courier co = null;
             try
             {
-                co = DB.CouriersList.Where(u => u.Login == IDTextBox.Text && u.Password == PasswordTextBox.Text).Single();
+                co = DB.CouriersList.Where(u => u.Login == IDTextBox.Text && u.Password == PasswordTextBox.Password).Single();
             }
             catch (Exception) { }
             if (co == null)
