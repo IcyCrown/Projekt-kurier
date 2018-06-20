@@ -113,8 +113,23 @@ namespace Projekt_kurier
         private void IdSort_Selected(object sender, RoutedEventArgs e)
         {
             View.SortDescriptions.Clear();
-            View.SortDescriptions.Add(new SortDescription("Sender.Login", ListSortDirection.Ascending));
+            View.SortDescriptions.Add(new SortDescription("Login", ListSortDirection.Ascending));
             View.Refresh();
+        }
+
+        private void NoGroup_Selected(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void StateGroup_Selected(object sender, RoutedEventArgs e)
+        {
+            View.CustomSort = new SortByState();
+            StateGrouper grouper = new StateGrouper();
+            View.GroupDescriptions.Add(new PropertyGroupDescription("Stan", grouper));
+        }
+
+        private void DateGroup_Selected(object sender, RoutedEventArgs e)
+        {
         }
     }
 }
