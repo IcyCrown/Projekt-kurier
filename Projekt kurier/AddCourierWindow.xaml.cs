@@ -30,10 +30,10 @@ namespace Projekt_kurier
                 MessageBox.Show("Uzupełnij puste pola!");
                 return;
             }
-            User us = null;
+            Courier us = null;
             try
             {
-                us = DB.UsersList.Where(u => u.Login == LoginTextBox.Text).Single();
+                us = DB.CouriersList.Where(u => u.Login == LoginTextBox.Text).Single();
             }
             catch (Exception) { }
             if (us != null)

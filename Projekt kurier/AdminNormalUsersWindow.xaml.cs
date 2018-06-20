@@ -46,6 +46,7 @@ namespace Projekt_kurier
             EditNormalUserDataWindow win = new EditNormalUserDataWindow();
             win.Owner = this;
             win.DataContext = NormalUsersListBox.SelectedItem;
+            win.uss = (User)NormalUsersListBox.SelectedItem;
             win.ShowDialog();
         }
 
