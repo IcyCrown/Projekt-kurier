@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 
 namespace Projekt_kurier
 {
@@ -13,5 +14,26 @@ namespace Projekt_kurier
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            var binding = new CommandBinding(Commands.Close, DoSomething, CanDoSomething);
+
+            // Register CommandBinding for all windows.
+            CommandManager.RegisterClassCommandBinding(typeof(Window), binding);
+        }
+
+        private void DoSomething(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (sender is Window) ((Window)sender).Close();
+            else
+            {
+                Window parent = Window.GetWindow((UIElement)sender);
+            }
+        }
+
+        private void CanDoSomething(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+        }
     }
 }

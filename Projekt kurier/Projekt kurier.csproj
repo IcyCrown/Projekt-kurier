@@ -66,6 +66,7 @@
     <Compile Include="AssignParcelWindow.xaml.cs">
       <DependentUpon>AssignParcelWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Commands.cs" />
     <Compile Include="Courier.cs" />
     <Compile Include="CourierLoginDataWindow.xaml.cs">
       <DependentUpon>CourierLoginDataWindow.xaml</DependentUpon>
