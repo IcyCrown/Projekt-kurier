@@ -43,11 +43,6 @@ namespace Projekt_kurier
             win.ShowDialog();
         }
 
-        private void Exit(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
         private void Register(object sender, RoutedEventArgs e)
         {
             AddNormalUserWindow anuw = new AddNormalUserWindow();
