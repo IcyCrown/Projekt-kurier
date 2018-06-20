@@ -35,5 +35,15 @@ namespace Projekt_kurier
         {
             e.CanExecute = true;
         }
+
+        private void Application_Exit(object sender, ExitEventArgs e)
+        {
+            DB.Save();
+        }
+
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            DB.Read();
+        }
     }
 }
