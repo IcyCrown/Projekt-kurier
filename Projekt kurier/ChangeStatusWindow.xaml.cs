@@ -29,9 +29,11 @@ namespace Projekt_kurier
             if (Owner is CourierParcelWindow)
             {
                 package = (Package)((CourierParcelWindow)Owner).PackagesListBox.SelectedItem;
+                ((CourierParcelWindow)Owner).PackagesListBox.Items.Refresh();
                 package.AssignedCourier.DeliveredPackagesCount++;
             }
             else { package = (Package)((AdminParcelWindow)Owner).PackagesListBox.SelectedItem; }
+            ((AdminParcelWindow)Owner).PackagesListBox.Items.Refresh();
             package.State = PackageState.Delivered;
             package.LastModification = DateTime.Now;
             this.Close();
@@ -39,8 +41,12 @@ namespace Projekt_kurier
         void SetPackageAssigned(object sender, RoutedEventArgs e)
         {
             Package package;
-            if (Owner is CourierParcelWindow) { package = (Package)((CourierParcelWindow)Owner).PackagesListBox.SelectedItem; }
-            else { package = (Package)((AdminParcelWindow)Owner).PackagesListBox.SelectedItem; }
+            if (Owner is CourierParcelWindow) { package = (Package)((CourierParcelWindow)Owner).PackagesListBox.SelectedItem;
+                ((CourierParcelWindow)Owner).PackagesListBox.Items.Refresh();
+            }
+            else { package = (Package)((AdminParcelWindow)Owner).PackagesListBox.SelectedItem;
+            ((AdminParcelWindow)Owner).PackagesListBox.Items.Refresh();
+            }
             package.State = PackageState.Pending;
             package.LastModification = DateTime.Now;
             this.Close();
@@ -48,8 +54,11 @@ namespace Projekt_kurier
         void SetPackageCancelled(object sender, RoutedEventArgs e)
         {
             Package package;
-            if (Owner is CourierParcelWindow) { package = (Package)((CourierParcelWindow)Owner).PackagesListBox.SelectedItem; }
-            else { package = (Package)((AdminParcelWindow)Owner).PackagesListBox.SelectedItem; }
+            if (Owner is CourierParcelWindow) { package = (Package)((CourierParcelWindow)Owner).PackagesListBox.SelectedItem;
+                ((CourierParcelWindow)Owner).PackagesListBox.Items.Refresh();
+            }
+            else { package = (Package)((AdminParcelWindow)Owner).PackagesListBox.SelectedItem;
+            ((AdminParcelWindow)Owner).PackagesListBox.Items.Refresh();}
             package.State = PackageState.Cancelled;
             package.LastModification = DateTime.Now;
             this.Close();

@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.ComponentModel;
+
 
 namespace Projekt_kurier
 {
@@ -30,6 +32,13 @@ namespace Projekt_kurier
             PackagesListBox.ItemsSource = DB.PackagesList;
         }
 
+        private ListCollectionView View
+        {
+            get
+            {
+                return (ListCollectionView)CollectionViewSource.GetDefaultView(DB.Instance.Packages);
+            }
+        }
         private void Assign(object sender, RoutedEventArgs e)
         {
             AssignParcelWindow win = new AssignParcelWindow();
@@ -86,6 +95,26 @@ namespace Projekt_kurier
                 ChangeStatusButton.IsEnabled = false;
                 DeleteButton.IsEnabled = false;
             }
+        }
+        private void NoSort_Selected(object sender, RoutedEventArgs e)
+        {
+            View.SortDescriptions.Clear();
+            View.Refresh();
+        }
+
+        private void StatusPackageSort_Selected(object sender, RoutedEventArgs e)
+        {
+            View.SortDescriptions.Clear();
+            View.SortDescriptions.Add(new SortDescription("State", ListSortDirection.Ascending));
+            View.Refresh();
+        }
+
+
+        private void IdSort_Selected(object sender, RoutedEventArgs e)
+        {
+            View.SortDescriptions.Clear();
+            View.SortDescriptions.Add(new SortDescription("Sender.Login", ListSortDirection.Ascending));
+            View.Refresh();
         }
     }
 }
