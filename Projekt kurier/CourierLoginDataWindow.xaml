@@ -21,9 +21,9 @@
             <Label Margin="2.5">Nowy Login:</Label>
             <Label Grid.Row="1" Margin="2.5">Nowe Hasło:</Label>
             <Label Grid.Row="2" Margin="2.5">Powtórz hasło:</Label>
-            <TextBox Grid.Column="1" Margin="2.5"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="1" Margin="2.5"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="1" Margin="2.5"></TextBox>
+            <TextBox Name="NewLoginTextBox" Grid.Column="1" Margin="2.5"></TextBox>
+            <TextBox Name="NewPasswordTextBox" Grid.Row="1" Grid.Column="1" Margin="2.5"></TextBox>
+            <TextBox Name="ConfirmPasswordTextBox" Grid.Row="2" Grid.Column="1" Margin="2.5"></TextBox>
 
         </Grid>
         <Grid Grid.Row="1">
@@ -31,8 +31,8 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Margin="2.5">Zapisz</Button>
-            <Button Grid.Column="1" Margin="2.5">Wyjdź</Button>
+            <Button Click="Save" Margin="2.5">Zapisz</Button>
+            <Button Click="Close" Grid.Column="1" Margin="2.5">Wyjdź</Button>
         </Grid>
     </Grid>
 </Window>
