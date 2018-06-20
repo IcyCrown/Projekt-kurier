@@ -36,7 +36,7 @@
                 <Button Grid.Column="4" Margin="5">Szukaj</Button>
                 <Rectangle Width="1" Height="40" Grid.Column="5" Fill="{StaticResource MainThemeBorderBrush}"></Rectangle>
             </Grid>
-            <ListBox Name="PackagesListBox" Grid.Row="1" Margin="5,0,0,5" ItemTemplate="{StaticResource UserCourierParcelDataTemplate}"></ListBox>
+            <ListBox Name="PackagesListBox" SelectionChanged="PackagesListBox_SelectionChanged" Grid.Row="1" Margin="5,0,0,5" ItemTemplate="{StaticResource UserCourierParcelDataTemplate}"></ListBox>
         </Grid>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
@@ -47,8 +47,8 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
-            <Button Click="ShowDescription" Margin="2.5" Style="{StaticResource GreenButtonStyle}" Height="50">Wyświetl Opis</Button>
-            <Button Grid.Row="1" Click="ChangeStatus" Margin="2.5" Style="{StaticResource OrangeButtonStyle}" Height="50">Zmień Status</Button>
+            <Button Name="DescriptionButton" Click="ShowDescription" Margin="2.5" Style="{StaticResource GreenButtonStyle}" Height="50">Wyświetl Opis</Button>
+            <Button Name="StatusButton" Grid.Row="1" Click="ChangeStatus" Margin="2.5" Style="{StaticResource OrangeButtonStyle}" Height="50">Zmień Status</Button>
             <Button Grid.Row="2" Click="Close" Margin="2.5" Style="{StaticResource RedButtonStyle}" Height="50">Wyjdź</Button>
         </Grid>
 
