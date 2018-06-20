@@ -37,6 +37,7 @@ namespace Projekt_kurier
         {
             AddParcelWindow win = new AddParcelWindow();
             win.Owner = this;
+            win.DataContext = CurrentUser;
             win.ShowDialog(); 
         }
 

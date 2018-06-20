@@ -88,5 +88,19 @@ namespace Projekt_kurier
                 DeleteButton.IsEnabled = false;
             }
         }
+
+        private void SearchId(object sender, RoutedEventArgs e)
+        {
+            if (SearchIDTextBox.Text == string.Empty)
+            {
+                NormalUsersListBox.ItemsSource = DB.UsersList;
+                return;
+            }
+            var filtered = from co in DB.UsersList
+                           let id = co.Login
+                           where id.Contains(SearchIDTextBox.Text)
+                           select co;
+            NormalUsersListBox.ItemsSource = filtered;
+        }
     }
 }
