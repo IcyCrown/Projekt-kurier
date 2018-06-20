@@ -103,6 +103,8 @@
       <DependentUpon>ParcelStatusInfoWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="SettingSource.cs" />
+    <Compile Include="SortByState.cs" />
+    <Compile Include="StateGrouper.cs" />
     <Compile Include="User.cs" />
     <Compile Include="NormalUserParcelListWindow.xaml.cs">
       <DependentUpon>NormalUserParcelListWindow.xaml</DependentUpon>
