@@ -23,6 +23,8 @@ namespace Projekt_kurier
         public CourierParcelWindow()
         {
             InitializeComponent();
+            DescriptionButton.IsEnabled = false;
+            StatusButton.IsEnabled = false;
         }
 
         private void ChangeStatus(object sender, RoutedEventArgs e)
@@ -53,6 +55,20 @@ namespace Projekt_kurier
                                               select package;
             }
             catch (NullReferenceException) { }
+        }
+
+        private void PackagesListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(PackagesListBox.SelectedIndex>=0)
+            {
+                DescriptionButton.IsEnabled = true;
+                StatusButton.IsEnabled = true;
+            }
+            else
+            {
+                DescriptionButton.IsEnabled = false;
+                StatusButton.IsEnabled = false;
+            }
         }
     }
 }
