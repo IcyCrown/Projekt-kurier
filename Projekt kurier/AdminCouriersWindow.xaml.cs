@@ -83,5 +83,18 @@ namespace Projekt_kurier
             View.SortDescriptions.Add(new SortDescription("Login", ListSortDirection.Ascending));
         }
 
+        private void SearchID(object sender, RoutedEventArgs e)
+        {
+            if(SearchIDTextBox.Text == string.Empty)
+            {
+                CouriersListBox.ItemsSource = DB.CouriersList;
+                return;
+            }
+            var filtered = from co in DB.CouriersList
+                           let id = co.Login
+                           where id.Contains(SearchIDTextBox.Text)
+                           select co;
+            CouriersListBox.ItemsSource = filtered;
+        }
     }
 }
