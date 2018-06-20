@@ -63,6 +63,9 @@
     <Compile Include="AdminNormalUsersWindow.xaml.cs">
       <DependentUpon>AdminNormalUsersWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AdminParcelChangeDataWindow.xaml.cs">
+      <DependentUpon>AdminParcelChangeDataWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AssignParcelWindow.xaml.cs">
       <DependentUpon>AssignParcelWindow.xaml</DependentUpon>
     </Compile>
@@ -147,6 +150,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AdminNormalUsersWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminParcelChangeDataWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
