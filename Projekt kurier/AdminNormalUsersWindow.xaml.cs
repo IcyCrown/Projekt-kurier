@@ -72,5 +72,19 @@ namespace Projekt_kurier
             View.SortDescriptions.Clear();
             View.SortDescriptions.Add(new SortDescription("Login", ListSortDirection.Ascending));
         }
+
+        private void SearchId(object sender, RoutedEventArgs e)
+        {
+            if (SearchIDTextBox.Text == string.Empty)
+            {
+                NormalUsersListBox.ItemsSource = DB.UsersList;
+                return;
+            }
+            var filtered = from co in DB.UsersList
+                           let id = co.Login
+                           where id.Contains(SearchIDTextBox.Text)
+                           select co;
+            NormalUsersListBox.ItemsSource = filtered;
+        }
     }
 }
